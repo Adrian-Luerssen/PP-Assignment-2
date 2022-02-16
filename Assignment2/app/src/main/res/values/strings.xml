@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Assignment-2</string>
+    <string name="Question">No question has been loaded</string>
+    <string name="True_Button">True</string>
+    <string name="False_Button">False</string>
+    <string name="toast_correct">That answer was correct</string>
+    <string name="toast_incorrect">That answer was not correct</string>
+    <string name="Score">Score: 0</string>
+    <string name="Reset_Button">Reset</string>
+    <string name="score_format">Score: %d/%d</string>
+
+    <string name="Question1">Paris the capital city of france.</string>
+    <string name="Question2">A conventional tennis set 6 games.</string>
+    <string name="Question3">Martin Brundle raced against both Ayrton Senna and Micheal Schumacher.</string>
+    <string name="Question4">Ayrton Senna is the only brazilian driver to win a grand prix.</string>
+    <string name="Question5">No question has been loaded</string>
+    <string name="Question6">No question has been loaded</string>
+    <string name="Question7">No question has been loaded</string>
+    <string name="Question8">No question has been loaded</string>
+    <string name="Question9">No question has been loaded</string>
+    <string name="Question10">No question has been loaded</string>
+</resources>
