@@ -9,14 +9,30 @@
     <string name="Reset_Button">Reset</string>
     <string name="score_format">Score: %d/%d</string>
 
-    <string name="Question1">Paris the capital city of france.</string>
-    <string name="Question2">A conventional tennis set 6 games.</string>
-    <string name="Question3">Martin Brundle raced against both Ayrton Senna and Micheal Schumacher.</string>
-    <string name="Question4">Ayrton Senna is the only brazilian driver to win a grand prix.</string>
-    <string name="Question5">No question has been loaded</string>
-    <string name="Question6">No question has been loaded</string>
-    <string name="Question7">No question has been loaded</string>
-    <string name="Question8">No question has been loaded</string>
-    <string name="Question9">No question has been loaded</string>
-    <string name="Question10">No question has been loaded</string>
+    <string-array name="questions">
+        <item name="Question1">Paris the capital city of france.</item>
+        <item name="Question2">A conventional tennis set 6 games.</item>
+        <item name="Question3">Martin Brundle raced against both Ayrton Senna and Micheal Schumacher.</item>
+        <item name="Question4">Ayrton Senna is the only brazilian driver to win a grand prix.</item>
+        <item name="Question5">No question has been loaded</item>
+        <item name="Question6">No question has been loaded</item>
+        <item name="Question7">No question has been loaded</item>
+        <item name="Question8">No question has been loaded</item>
+        <item name="Question9">No question has been loaded</item>
+        <item name="Question10">No question has been loaded</item>
+    </string-array>
+
+    <string-array name="answers">
+        <item name="Answer1">TRUE</item>
+        <item name="Answer2">TRUE</item>
+        <item name="Answer3">TRUE</item>
+        <item name="Answer4">FALSE</item>
+        <item name="Answer5">No question has been loaded</item>
+        <item name="Answer6">No question has been loaded</item>
+        <item name="Answer7">No question has been loaded</item>
+        <item name="Answer8">No question has been loaded</item>
+        <item name="Answer9">No question has been loaded</item>
+        <item name="Answer10">No question has been loaded</item>
+    </string-array>
+
 </resources>
