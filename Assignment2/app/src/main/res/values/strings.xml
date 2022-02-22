@@ -8,12 +8,14 @@
     <string name="Score">Score: 0</string>
     <string name="Reset_Button">Reset</string>
     <string name="score_format">Score: %d/%d</string>
+    <string name="Question1" />
+    <string name="Question2" />
 
     <string-array name="questions">
-        <item name="Question1">Paris the capital city of france.</item>
+        <item name="Question1">Paris is the capital city of France.</item>
         <item name="Question2">A conventional tennis set 6 games.</item>
         <item name="Question3">Martin Brundle raced against both Ayrton Senna and Micheal Schumacher.</item>
-        <item name="Question4">Ayrton Senna is the only brazilian driver to win a grand prix.</item>
+        <item name="Question4">Ayrton Senna is the only brazilian driver to win a Grand Prix.</item>
         <item name="Question5">No question has been loaded</item>
         <item name="Question6">No question has been loaded</item>
         <item name="Question7">No question has been loaded</item>

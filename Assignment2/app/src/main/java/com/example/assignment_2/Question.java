@@ -1,10 +1,9 @@
 package com.example.assignment_2;
 
 public class Question {
-    private String question;
-    private boolean correctAnswer;
-    private boolean wrongAnswer;
-    private String explanation;
+    private final String question;
+    private final boolean correctAnswer;
+    private final String explanation;
 
     public String getQuestion() {
         return question;
@@ -15,16 +14,14 @@ public class Question {
         return this.correctAnswer == answer;
     }
 
-    public Question(String question, boolean correctAnswer, boolean wrongAnswer) {
+    public Question(String question, boolean correctAnswer) {
         this.question = question;
         this.correctAnswer = correctAnswer;
-        this.wrongAnswer = wrongAnswer;
         this.explanation = "";
     }
-    public Question(String question, boolean correctAnswer, boolean wrongAnswer, String explanation) {
+    public Question(String question, boolean correctAnswer, String explanation) {
         this.question = question;
         this.correctAnswer = correctAnswer;
-        this.wrongAnswer = wrongAnswer;
         this.explanation = explanation;
     }
 }
