@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     correctToast.setText(getString(R.string.toast_correct)+"\n" + questionPool.getQuestionExplanation());
                     correctToast.show();
                     questionPool.popCurrentQuestion(true);
-                    score.setText(String.format(Locale.ENGLISH, "Score: %d", questionPool.getCorrectAnswers()));
+                    score.setText(String.format(Locale.ENGLISH, getString(R.string.score_format), questionPool.getCorrectAnswers()));
                 } else {
                     incorrectToast.setText(getString(R.string.toast_incorrect) + "\n" + questionPool.getQuestionExplanation());
                     incorrectToast.show();
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     correctToast.setText(getString(R.string.toast_correct) + "\n" + questionPool.getQuestionExplanation());
                     correctToast.show();
                     questionPool.popCurrentQuestion(true);
-                    score.setText(String.format(Locale.ENGLISH, "Score: %d", questionPool.getCorrectAnswers()));
+                    score.setText(String.format(Locale.ENGLISH, getString(R.string.score_format), questionPool.getCorrectAnswers()));
 
                 } else {
                     incorrectToast.setText(getString(R.string.toast_incorrect)+"\n"+questionPool.getQuestionExplanation());
