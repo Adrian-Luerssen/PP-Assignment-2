@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         trueButton.setOnClickListener(view -> {
+            // changes the display question
             if (!questionPool.isEmpty()){
                 // the user presses true, display the corresponding toast if the answer is correct or not
                 if (questionPool.answerIsCorrect(true)) {
@@ -64,15 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 // shift index to next question
                 questionPool.nextQuestion();
                 // change the text to make it into the new question
-                question.setText(questionPool.getQuestionString());
 
-            } else{
-                question.setText(questionPool.getQuestionString()); // changes the display question
             }
+            question.setText(questionPool.getQuestionString());
 
         });
 
         falseButton.setOnClickListener(view -> {
+            // changes the display question
             if (!questionPool.isEmpty()){
 
                 // the user presses true, display the corresponding toast if the answer is correct or not
@@ -91,12 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 // shift index to next question
                 questionPool.nextQuestion();
                 // change the text to make it into the new question
-                question.setText(questionPool.getQuestionString());
 
 
-            } else {
-                question.setText(questionPool.getQuestionString()); // changes the display question
             }
+            question.setText(questionPool.getQuestionString());
 
 
         });

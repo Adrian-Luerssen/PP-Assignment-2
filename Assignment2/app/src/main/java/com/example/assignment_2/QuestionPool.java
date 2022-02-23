@@ -8,6 +8,8 @@ public class QuestionPool {
 
     private int correctAnswers;
 
+    private int totalAnswered;
+
     private int index;
 
     public void init(){
@@ -21,7 +23,7 @@ public class QuestionPool {
 
     }
     public boolean isEmpty(){
-        return questions.size() == 0;
+        return questions.size() == totalAnswered;
     }
 
     public boolean answerIsCorrect(boolean answer) {
@@ -31,11 +33,19 @@ public class QuestionPool {
     }
     public void nextQuestion() {
 
-        index++;
+        if(totalAnswered != questions.size()) {
+            index++;
 
-        // changed previous code to an if statement to make the arrows circular
-        if(index == questions.size()){
-            index = 0;
+            for (; true; index++) {
+
+                if (index == questions.size()) {
+                    index = 0;
+                }
+
+                if (!questions.get(index).isAnswered()) {
+                    break;
+                }
+            }
         }
 
         System.out.println(index);
@@ -43,11 +53,19 @@ public class QuestionPool {
     }
     public void backQuestion() {
 
-        index--;
+        if(totalAnswered != questions.size()) {
+            index--;
 
-        // changed it to an if statement to make the arrows circular
-        if(index < 0){
-            index = questions.size() - 1;
+            for (; true; index--) {
+
+                if (index < 0) {
+                    index = questions.size() - 1;
+                }
+
+                if (!questions.get(index).isAnswered()) {
+                    break;
+                }
+            }
         }
 
     }
@@ -69,12 +87,22 @@ public class QuestionPool {
             correctAnswers++;
         }
 
-        questions.remove(index);
+        questions.get(index).setAnswerState(true);
+        totalAnswered++;
+        System.out.print(totalAnswered);
 
     }
 
     public void restartQuestions(){
+
         index = 0;
+        correctAnswers = 0;
+        totalAnswered = 0;
+
+        for(int i = 0; i < questions.size(); i++){
+            questions.get(i).setAnswerState(false);
+        }
+
     }
 
     public int getCorrectAnswers(){

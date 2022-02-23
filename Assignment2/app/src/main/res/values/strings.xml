@@ -8,8 +8,6 @@
     <string name="Score">Score: 0</string>
     <string name="Reset_Button">Reset</string>
     <string name="score_format">Score: %d</string>
-    <string name="Question1" />
-    <string name="Question2" />
 
     <string-array name="questions">
         <item name="Question1">Paris is the capital city of France.</item>
