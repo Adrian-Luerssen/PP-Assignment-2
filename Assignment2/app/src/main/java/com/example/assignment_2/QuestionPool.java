@@ -19,7 +19,7 @@ public class QuestionPool {
         correctAnswers = 0;
 
         questions = new ArrayList<>();
-        
+
     }
 
     //GETTERS
@@ -38,6 +38,10 @@ public class QuestionPool {
 
     public boolean isCurrentQuestionAnswered(){
         return !questions.get(index).isAnswered();
+    }
+
+    public int getTotalAnswered() {
+        return totalAnswered;
     }
 
     // stopped using it as we changed the way of moving in ArrayList

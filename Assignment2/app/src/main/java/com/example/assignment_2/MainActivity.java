@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                     correctToast.setText(getString(R.string.toast_correct)+ "\n" + questionPool.getQuestionExplanation());
                     correctToast.show();
                     questionPool.answeredCurrentQuestion(true);
-                    score.setText(String.format(Locale.ENGLISH, getString(R.string.score_format), questionPool.getCorrectAnswers()));
 
                 } else {
 
@@ -68,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
                     questionPool.answeredCurrentQuestion(false);
 
                 }
+
+                score.setText(String.format(Locale.ENGLISH,
+                        getString(R.string.score_format),
+                        questionPool.getCorrectAnswers(),
+                        questionPool.getTotalAnswered()));
 
             } else {
                 alreadyAnsweredToast.setText(getString(R.string.toast_answered));
@@ -86,13 +90,16 @@ public class MainActivity extends AppCompatActivity {
                     correctToast.setText(getString(R.string.toast_correct) + "\n" + questionPool.getQuestionExplanation());
                     correctToast.show();
                     questionPool.answeredCurrentQuestion(true);
-                    score.setText(String.format(Locale.ENGLISH, getString(R.string.score_format), questionPool.getCorrectAnswers()));
-
                 } else {
                     incorrectToast.setText(getString(R.string.toast_incorrect)+"\n"+questionPool.getQuestionExplanation());
                     incorrectToast.show();
                     questionPool.answeredCurrentQuestion(false);
                 }
+
+                score.setText(String.format(Locale.ENGLISH,
+                        getString(R.string.score_format),
+                        questionPool.getCorrectAnswers(),
+                        questionPool.getTotalAnswered()));
 
             } else {
                 alreadyAnsweredToast.setText(getString(R.string.toast_answered));
