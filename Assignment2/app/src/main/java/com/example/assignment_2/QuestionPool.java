@@ -19,9 +19,30 @@ public class QuestionPool {
         correctAnswers = 0;
 
         questions = new ArrayList<>();
-
-
+        
     }
+
+    //GETTERS
+
+    public int getCorrectAnswers(){
+        return correctAnswers;
+    }
+
+    public String getQuestionExplanation(){
+        return questions.get(index).getExplanation();
+    }
+
+    public String getQuestionString() {
+        return questions.get(index).getQuestion();
+    }
+
+    public boolean isCurrentQuestionAnswered(){
+        return !questions.get(index).isAnswered();
+    }
+
+    // stopped using it as we changed the way of moving in ArrayList
+    // kept it just for future checks
+    @Deprecated
     public boolean isEmpty(){
         return questions.size() == totalAnswered;
     }
@@ -31,57 +52,41 @@ public class QuestionPool {
         return questions.get(index).isCorrect(answer);
 
     }
+
+    //SETTERS
+
     public void nextQuestion() {
 
-        if(totalAnswered != questions.size()) {
-            index++;
 
-            for (; true; index++) {
+        index++;
 
-                if (index == questions.size()) {
-                    index = 0;
-                }
-
-                if (!questions.get(index).isAnswered()) {
-                    break;
-                }
-            }
+        if (index == questions.size()) {
+            index = 0;
         }
 
+        // debugging
         System.out.println(index);
 
     }
+
     public void backQuestion() {
 
-        if(totalAnswered != questions.size()) {
-            index--;
+        index--;
 
-            for (; true; index--) {
-
-                if (index < 0) {
-                    index = questions.size() - 1;
-                }
-
-                if (!questions.get(index).isAnswered()) {
-                    break;
-                }
-            }
+        if (index < 0) {
+            index = questions.size() - 1;
         }
 
+        // debugging
+        System.out.println(index);
+
     }
 
-    public String getQuestionString() {
-        return (isEmpty())?"There are no questions left.":questions.get(index).getQuestion();
-    }
     public void addQuestion(String question, boolean correctAnswer){
         questions.add(new Question(question,correctAnswer));
     }
 
-    public String getQuestionExplanation(){
-        return questions.get(index).getExplanation();
-    }
-
-    public void popCurrentQuestion(boolean answerCorrect){
+    public void answeredCurrentQuestion(boolean answerCorrect){
 
         if(answerCorrect){
             correctAnswers++;
@@ -89,6 +94,7 @@ public class QuestionPool {
 
         questions.get(index).setAnswerState(true);
         totalAnswered++;
+
         System.out.print(totalAnswered);
 
     }
@@ -103,10 +109,6 @@ public class QuestionPool {
             questions.get(i).setAnswerState(false);
         }
 
-    }
-
-    public int getCorrectAnswers(){
-        return correctAnswers;
     }
 
 }

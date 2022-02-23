@@ -39,62 +39,66 @@ public class MainActivity extends AppCompatActivity {
         question.setText(questionPool.getQuestionString());
         // setting the initial question on start up
         // creating the toast for a correct answer
-        Toast correctToast= Toast.makeText(getApplicationContext(), R.string.toast_correct, Toast.LENGTH_LONG);
+        Toast correctToast = Toast.makeText(getApplicationContext(), R.string.toast_correct, Toast.LENGTH_LONG);
         correctToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 250);
         // creating the toast for an incorrect answer
-        Toast incorrectToast= Toast.makeText(getApplicationContext(), R.string.toast_incorrect, Toast.LENGTH_LONG);
+        Toast incorrectToast = Toast.makeText(getApplicationContext(), R.string.toast_incorrect, Toast.LENGTH_LONG);
         incorrectToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 250);
+        // creating the toast for the question already answered
+        Toast alreadyAnsweredToast = Toast.makeText(getApplicationContext(), R.string.toast_answered, Toast.LENGTH_LONG);
+        alreadyAnsweredToast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 250);
 
 
         trueButton.setOnClickListener(view -> {
             // changes the display question
-            if (!questionPool.isEmpty()){
+            System.out.print(questionPool.isCurrentQuestionAnswered());
+            if (questionPool.isCurrentQuestionAnswered()){
                 // the user presses true, display the corresponding toast if the answer is correct or not
                 if (questionPool.answerIsCorrect(true)) {
-                    correctToast.setText(getString(R.string.toast_correct)+"\n" + questionPool.getQuestionExplanation());
+
+                    correctToast.setText(getString(R.string.toast_correct)+ "\n" + questionPool.getQuestionExplanation());
                     correctToast.show();
-                    questionPool.popCurrentQuestion(true);
+                    questionPool.answeredCurrentQuestion(true);
                     score.setText(String.format(Locale.ENGLISH, getString(R.string.score_format), questionPool.getCorrectAnswers()));
+
                 } else {
+
                     incorrectToast.setText(getString(R.string.toast_incorrect) + "\n" + questionPool.getQuestionExplanation());
                     incorrectToast.show();
-                    questionPool.popCurrentQuestion(false);
+                    questionPool.answeredCurrentQuestion(false);
 
                 }
 
-                // shift index to next question
-                questionPool.nextQuestion();
-                // change the text to make it into the new question
-
+            } else {
+                alreadyAnsweredToast.setText(getString(R.string.toast_answered));
+                alreadyAnsweredToast.show();
             }
-            question.setText(questionPool.getQuestionString());
 
         });
 
         falseButton.setOnClickListener(view -> {
             // changes the display question
-            if (!questionPool.isEmpty()){
+            System.out.print(questionPool.isCurrentQuestionAnswered());
+            if (questionPool.isCurrentQuestionAnswered()){
 
                 // the user presses true, display the corresponding toast if the answer is correct or not
                 if (questionPool.answerIsCorrect(false)) {
                     correctToast.setText(getString(R.string.toast_correct) + "\n" + questionPool.getQuestionExplanation());
                     correctToast.show();
-                    questionPool.popCurrentQuestion(true);
+                    questionPool.answeredCurrentQuestion(true);
                     score.setText(String.format(Locale.ENGLISH, getString(R.string.score_format), questionPool.getCorrectAnswers()));
 
                 } else {
                     incorrectToast.setText(getString(R.string.toast_incorrect)+"\n"+questionPool.getQuestionExplanation());
                     incorrectToast.show();
-                    questionPool.popCurrentQuestion(false);
+                    questionPool.answeredCurrentQuestion(false);
                 }
 
-                // shift index to next question
-                questionPool.nextQuestion();
-                // change the text to make it into the new question
-
-
+            } else {
+                alreadyAnsweredToast.setText(getString(R.string.toast_answered));
+                alreadyAnsweredToast.show();
             }
-            question.setText(questionPool.getQuestionString());
+
 
 
         });

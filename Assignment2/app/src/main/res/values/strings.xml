@@ -5,6 +5,7 @@
     <string name="False_Button">False</string>
     <string name="toast_correct">That answer was correct</string>
     <string name="toast_incorrect">That answer was not correct</string>
+    <string name="toast_answered">This question has already been answered!</string>
     <string name="Score">Score: 0</string>
     <string name="Reset_Button">Reset</string>
     <string name="score_format">Score: %d</string>
